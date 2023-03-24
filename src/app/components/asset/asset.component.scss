@@ -1,0 +1,35 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+.card {
+  max-width: 500px;
+}
+
+.card-content {
+  padding: 8px 16px;
+}
+
+.header-image {
+  background-image: url("https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg?size=34x34");
+  background-size: cover;
+}
+.example-full-width {
+  width: 100%;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+td {
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
+
+  padding: 0 4px;
+}

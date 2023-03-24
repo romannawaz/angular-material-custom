@@ -1,0 +1,86 @@
+<mat-card class="card">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-title>Bitcoin 28026.75</mat-card-title>
+    <mat-card-subtitle>Bitcoin / USDT</mat-card-subtitle>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content class="card-content">
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Volume</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" color="accent">
+            <mat-label>Amount</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <div>
+      <p style="display: flex; justify-content: space-between">
+        <span>Initial margin</span>
+        <span>$140.13</span>
+      </p>
+      <p style="display: flex; justify-content: space-between">
+        <span>Pip value</span>
+        <span>$0.00001</span>
+      </p>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-select [(value)]="defaultType">
+          <mat-option [value]="option.value" *ngFor="let option of typies">{{
+            option.viewValue
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <section class="example-section">
+      <mat-checkbox
+        class="example-margin"
+        [(ngModel)]="takeProfit"
+        color="primary"
+      >
+        Take profit
+      </mat-checkbox>
+      <mat-checkbox
+        class="example-margin"
+        [(ngModel)]="stopLoss"
+        color="primary"
+      >
+        Stop loss
+      </mat-checkbox>
+    </section>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td *ngIf="takeProfit">
+          <mat-form-field class="example-full-width">
+            <mat-label>Take profit</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </td>
+        <td *ngIf="stopLoss">
+          <mat-form-field class="example-full-width" color="accent">
+            <mat-label>Stop loss</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" class="example-full-width">
+      Buy
+    </button>
+  </mat-card-actions>
+</mat-card>
